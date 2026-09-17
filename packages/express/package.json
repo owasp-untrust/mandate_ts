@@ -1,0 +1,12 @@
+{
+  "name": "@untrust/mandate-express",
+  "version": "0.1.0",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "exports": { ".": { "types": "./dist/index.d.ts", "default": "./dist/index.js" } },
+  "files": ["dist"],
+  "dependencies": { "@untrust/mandate-core": "0.1.0", "express": "^5.1.0" },
+  "peerDependencies": { "express": "^5.0.0" },
+  "scripts": { "build": "tsc -b" }
+}

@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "baseUrl": ".",
+    "paths": {
+      "@untrust/mandate-core": ["packages/core/src/index.ts"],
+      "@untrust/mandate-express": ["packages/express/src/index.ts"],
+      "@untrust/mandate-ajv": ["packages/ajv/src/index.ts"]
+    },
+    "strict": true,
+    "exactOptionalPropertyTypes": true,
+    "declaration": true,
+    "declarationMap": true,
+    "sourceMap": true,
+    "composite": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true
+  }
+}

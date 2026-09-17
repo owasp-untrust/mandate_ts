@@ -1,0 +1,32 @@
+{
+  "name": "mandate-workspace",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=18" },
+  "workspaces": [
+    "packages/*"
+  ],
+  "scripts": {
+    "check:imports": "depcruise --config dependency-cruiser.config.mjs packages examples test-types",
+    "bootstrap:local-vv": "node scripts/bootstrap-local-vv.mjs",
+    "pack:check": "npm pack --dry-run --workspaces",
+    "verify:packed-consumer": "npm run build && node scripts/verify-packed-consumer.mjs",
+    "build:typescript": "tsc -b",
+    "build": "npm run check:imports && npm run build:typescript",
+    "test": "npm run build && vitest run && npm run test:types",
+    "test:types": "tsc -p test-types/tsconfig.json --noEmit"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.0.0",
+    "@types/supertest": "^6.0.3",
+    "ajv": "^8.17.1",
+    "ajv-formats": "^3.0.1",
+    "dependency-cruiser": "^17.0.0",
+    "express": "^5.1.0",
+    "supertest": "^7.1.0",
+    "typescript": "^5.8.0",
+    "vitest": "^3.2.0",
+    "zod": "^3.25.0"
+  }
+}
